@@ -52,7 +52,7 @@ class Program
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Print("WARNING[]  SYSTEMS SHUTTING DOWN...");
-            Environment.Exit(0);
+            Main();
         }
         Console.ForegroundColor = ConsoleColor.Green;
         Print("INFO[]  CLEAN UP CONFIRMED. PROCEEDING...");
@@ -113,6 +113,16 @@ class Program
         Console.ForegroundColor = ConsoleColor.White;
         Print("INFO[]  ENTER THE ROOT FOLDER PATH TO SEARCH FOR DUPLICATE FILES:");
         string rootFolderPath = Console.ReadLine();
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Print($"WARNING[]  THIS WILL DELETE ALL DUPLICATE FILES IN {rootFolderPath}\nWARNING[] ENTER y TO CONFIRM:\n");
+        string userDupConfirm = Console.ReadLine();
+        if (userDupConfirm != "y")
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Print("WARNING[]  SYSTEMS SHUTTING DOWN...");
+            Main();
+        }
 
         Console.ForegroundColor = ConsoleColor.Yellow;
         Print("SYSTEM[]  SCANNING FOR DUPLICATE FILES...");
